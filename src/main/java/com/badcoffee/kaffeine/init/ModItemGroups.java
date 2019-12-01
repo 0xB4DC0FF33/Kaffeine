@@ -10,6 +10,8 @@ public class ModItemGroups {
 
     public static final ItemGroup MOD_ITEM_GROUP = new ModItemGroup(Kaffeine.MODID, () -> new ItemStack(ModItems.COFFEE_MUG));
 
+    // Helper class that creates an item group in the creative inventory...
+    // probably useless as i will probably use just one only custom tab
     public static class ModItemGroup extends ItemGroup {
 
         private final Supplier<ItemStack> iconSupplier;

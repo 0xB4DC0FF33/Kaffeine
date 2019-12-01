@@ -1,6 +1,7 @@
 package com.badcoffee.kaffeine;
 
 import com.badcoffee.kaffeine.init.ModItemGroups;
+import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.event.RegistryEvent;
@@ -11,6 +12,7 @@ import net.minecraftforge.registries.IForgeRegistryEntry;
 @Mod.EventBusSubscriber(modid = Kaffeine.MODID, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class ModEventSubscriber {
 
+    // registers items... yeah .. that a useful comment
     @SubscribeEvent
     public static void onRegisterItems(RegistryEvent.Register<Item> event) {
         event.getRegistry().registerAll(
@@ -18,6 +20,13 @@ public class ModEventSubscriber {
         );
     }
 
+    // Registers blocks.... just as the name implies
+    @SubscribeEvent
+    public static void onRegisterBlocks(RegistryEvent.Register<Block> event) {
+
+    }
+
+    // I honestly have no idea how this works... so let's not touch it okay ?
     public static <T extends IForgeRegistryEntry<T>> T setup(final T entry, final String name) {
         return setup(entry, new ResourceLocation(Kaffeine.MODID, name));
     }
